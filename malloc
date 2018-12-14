@@ -1,0 +1,25 @@
+how is malloc used?
+
+to allocate a certain amount of memory during the execution of your application. 
+ it will request a block of memory from the heap. 
+The operating system will reserve a block of memory for your program,
+When you are done with the block, you return it to the operating system for recycling by calling the free() function. 
+***************
+	int *p;
+	p = (int *)malloc(sizeof(int));
+	free(p);   //frees memory
+******************
+For example, the following code demonstrates the simplest possible use of the heap:
+ This function does three things:
+ malloc statement first looks at the amount of memory available on the heap and asks
+"Is there enough memory available to allocate a block of memory of the size requested?" 
+The amount of memory needed for the block is known from the parameter passed into malloc 
+ 			-- in this case, sizeof(int) is 4 bytes. 
+ If there is not enough memory available, 	
+ 		it returns the address zero to indicate the error ( NULL ).
+  Otherwise
+malloc proceeds.
+	"allocates" a block from the heap of the size specified. 
+
+The system then places into the pointer variable (p, in this case) the address of the reserved block. 
+The allocated block is able to hold a value of the type specified and the pointer points to it.
